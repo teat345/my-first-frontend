@@ -1,134 +1,111 @@
+"use client";
+
+import { useEffect } from "react";
 import Image from "next/image";
-import styles from "./page.module.css";
-import CustomSlider from "./slider";
-
-
 
 export default function Home() {
+  useEffect(() => {
+    // Dynamically load Bootstrap JS
+    import("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
+
   return (
-    <div>
-    {/* Navbar */}
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Navbar
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Contact-us
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                About Us
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Link
-              </a>
-            </li>
-          </ul>
-          <form className="d-flex" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
-      </div>
-    </nav>
-
-     {/* Main Content Section */}
-     <section id="hero" className="bg-primary text-white text-center py-5">
+    <>
+      {/* Navbar */}
+      <nav className="navbar navbar-expand-lg bg-light">
         <div className="container">
-          <h1 className="display-4">Welcome to Our Website</h1>
-          <p className="lead">Explore amazing features and services</p>
-          <a href="#features" className="btn btn-light btn-lg">
-            Learn More
+          <a className="navbar-brand" href="#">
+            Navbar
           </a>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section id="features" className="py-5">
-        <div className="container">
-          <div className="row text-center">
-            <div className="col-md-4">
-              <h3>Feature One</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div className="col-md-4">
-              <h3>Feature Two</h3>
-              <p>Nulla aliquet quam ut quam placerat, a porttitor libero tempus.</p>
-            </div>
-            <div className="col-md-4">
-              <h3>Feature Three</h3>
-              <p>Vestibulum sit amet orci fermentum, tincidunt neque sed, egestas lorem.</p>
-            </div>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a className="nav-link active" href="#">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  Contact
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  About
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-      </section>
+      </nav>
 
-  <CustomSlider/>
-  
-    {/* Footer */}
-    <footer className="py-3 my-4 bg-body-tertiary">
-      <div className="container-fluid">
-        <ul className="nav justify-content-center border-bottom pb-3 mb-3">
-          <li className="nav-item">
-            <a href="#" className="nav-link px-2 text-muted">
-              Home
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="#" className="nav-link px-2 text-muted">
-              Features
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="#" className="nav-link px-2 text-muted">
-              Pricing
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="#" className="nav-link px-2 text-muted">
-              FAQs
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="#" className="nav-link px-2 text-muted">
-              About
-            </a>
-          </li>
-        </ul>
-        <p className="text-center text-muted">© 2021 Company, Inc</p>
+      {/* Slider */}
+      <div id="carouselExample" className="carousel slide my-4" data-bs-ride="carousel">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <Image
+              src="/image1.jpg" // Replace with your image path
+              className="d-block w-100"
+              alt="Slide 1"
+              width={500}
+              height={600}
+            />
+          </div>
+          <div className="carousel-item">
+            <Image
+              src="/image2.jpg" // Replace with your image path
+              className="d-block w-100"
+              alt="Slide 2"
+              width={500}
+              height={600}
+            />
+          </div>
+          <div className="carousel-item">
+            <Image
+              src="/image3.jpg" // Replace with your image path
+              className="d-block w-100"
+              alt="Slide 3"
+              width={500}
+              height={600}
+            />
+          </div>
+        </div>
+        <button
+          className="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="prev"
+        >
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button
+          className="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="next"
+        >
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Next</span>
+        </button>
       </div>
-    </footer>
-  </div>
-  
+
+      {/* Footer */}
+      <footer className="text-center py-3 bg-light">
+        <p>© 2025 Company, Inc</p>
+      </footer>
+   
+    </>
   );
 }
