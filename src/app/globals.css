@@ -118,3 +118,61 @@
   }
 }
 
+/* styles.css or inline styles in your components */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 0;
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* ProductSlider.css */
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.product-slide {
+  text-align: center;
+  width: 300px;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-button {
+  position: absolute;
+  left: 10px;
+}
+
+.next-button {
+  position: absolute;
+  right: 10px;
+}
