@@ -1,0 +1,133 @@
+/* SLIDER CONTAINER */
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  /* TITLE */
+  .slider-title {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* PRODUCT SLIDE */
+  .product-slide {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .product-slide:hover {
+    transform: scale(1.02);
+  }
+  
+  /* PRODUCT IMAGE */
+  .product-image {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  /* PRODUCT INFO */
+  .product-info h2 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 5px;
+  }
+  
+  .product-info p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .product-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff6600;
+  }
+  
+  /* NAVIGATION BUTTONS */
+  .prev-button,
+  .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    font-size: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .prev-button {
+    left: -40px;
+  }
+  
+  .next-button {
+    right: -40px;
+  }
+  
+  .prev-button:hover,
+  .next-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* FADE IN ANIMATION */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .product-slide {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 768px) {
+    .product-slide {
+      max-width: 90%;
+    }
+  
+    .prev-button,
+    .next-button {
+      font-size: 18px;
+      padding: 10px;
+    }
+  
+    .prev-button {
+      left: -20px;
+    }
+  
+    .next-button {
+      right: -20px;
+    }
+  }
+  

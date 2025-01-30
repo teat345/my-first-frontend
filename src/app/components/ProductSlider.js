@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-
-
+import React, { useState } from "react";
+import "../product.css";
 
 const ProductSlider = ({ products }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -16,24 +15,29 @@ const ProductSlider = ({ products }) => {
   };
 
   return (
-    <div className="slider-container">
-      <button className="prev-button" onClick={goToPrevious}>
-        &#10094;
-      </button>
-      <div className="product-slide">
-        <img
-          src={products[currentIndex].image}
-          alt={products[currentIndex].name}
-          className="product-image"
-        />
+   <div className="slider-container">
+  <h1 className="slider-title">Featured Products</h1>
+
+  <div className="slider-navigation">
+    <button className="prev-button" onClick={goToPrevious}>&#10094;</button>
+
+    <div className="product-slide">
+      <img
+        src={products[currentIndex].image}
+        alt={products[currentIndex].name}
+        className="product-image"
+      />
+      <div className="product-info">
         <h2>{products[currentIndex].name}</h2>
         <p>{products[currentIndex].description}</p>
-        <span>${products[currentIndex].price}</span>
+        <span className="product-price">${products[currentIndex].price.toFixed(2)}</span>
       </div>
-      <button className="next-button" onClick={goToNext}>
-        &#10095;
-      </button>
     </div>
+
+    <button className="next-button" onClick={goToNext}>&#10095;</button>
+  </div>
+</div>
+
   );
 };
 

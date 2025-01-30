@@ -12,19 +12,31 @@ const products = [
     name: 'Product 1',
     description: 'This is a great product!',
     price: 25.99,
-    image: 'https://via.placeholder.com/300',
+    image: '/productimages/product1.jpg',
   },
   {
     name: 'Product 2',
     description: 'Another amazing product.',
     price: 39.99,
-    image: 'https://via.placeholder.com/300',
+    image: '/productimages/product2.jpg',
   },
   {
     name: 'Product 3',
     description: 'Best product in the market.',
     price: 49.99,
-    image: 'https://via.placeholder.com/300',
+    image: '/productimages/product3.jpg',
+  },
+  {
+    name: 'Product 4',
+    description: 'Best product in the market.',
+    price: 50.99,
+    image: '/productimages/product4.jpg',
+  },
+  {
+    name: 'Product 5',
+    description: 'Best product in the market.',
+    price: 60.99,
+    image: '/productimages/product5.jpg',
   },
 ];
 
@@ -42,10 +54,9 @@ export default function Home() {
       {/* Slider */}
       <Slider />
 
-      <div>
-        <h1>Product Slider</h1>
+      
         <ProductSlider products={products} />
-      </div>
+      
 
       {/* Footer */}
       <Footer />
